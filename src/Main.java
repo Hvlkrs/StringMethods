@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Main {
             public static <String> void main(String[] args) {
                 System.out.println("Java String Sınıfı Metotları!");
-                /*
+
 // charAt(): Belirtilen indisteki (konum) karakteri verir. char döndürür
                 String myStr = "Hello";
                 char result1 = ((java.lang.String) myStr).charAt(0);
@@ -171,7 +171,7 @@ public class Main {
 
 // valueOf(): Bir String nesnesinin ilkel değerini verir. String döndürür.
 
-                 */
+
 
             }
         }
