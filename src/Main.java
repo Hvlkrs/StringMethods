@@ -1,53 +1,54 @@
+import java.util.Arrays;
 
-        public class Main {
-            public static void main(String[] args) {
+public class Main {
+            public static <String> void main(String[] args) {
                 System.out.println("Java String Sınıfı Metotları!");
 
 // charAt(): Belirtilen indisteki (konum) karakteri verir. char döndürür
                 String myStr = "Hello";
-                char result1 = myStr.charAt(0);
+                char result1 = ((java.lang.String) myStr).charAt(0);
                 System.out.println(result1);
 
 // codePointAt(): Belirtilen indisteki karakterin Unicode'unu verir. int döndürür.
-                int result2 = myStr.codePointAt(0);
+                int result2 = ((java.lang.String) myStr).codePointAt(0);
                 System.out.println(result2);
 
 // codePointBefore(): Belirtilen indisteki önceki karakterin Unicode'unu verir. int döndürür.
-                int result3 = myStr.codePointBefore(1);
+                int result3 = ((java.lang.String) myStr).codePointBefore(1);
                 System.out.println(result3);
 
 // codePointCount(): Bu dizenin belirtilen metin aralığındaki Unicode'u döndürür. int döndürür.
-                int result4 = myStr.codePointCount(0, 5);
+                int result4 = ((java.lang.String) myStr).codePointCount(0, 5);
                 System.out.println(result4);
 
 // compareTo(): İki dizeyi sözlükbilimsel olarak karşılaştırır. int döndürür.
                 String myStr1 = "Hello";
                 String myStr2 = "Hello";
-                System.out.println(myStr1.compareTo(myStr2)); // Returns 0 because they are equal
+                System.out.println(((java.lang.String) myStr1).compareTo(myStr2)); // Returns 0 because they are equal
 
 // concat(): Başka bir String'in sonuna bir karakter ekler. String döndürür.
                 String firstName = "Hivel ";
                 String lastName = "K";
-                System.out.println(firstName.concat(lastName));
+                System.out.println(((java.lang.String) firstName).concat(lastName));
 
 // contains(): Bir dizenin bir dizi karakter içerip içermediğini kontrol eder. boolean döndürür.
                 String myStr3 = "Hello";
-                System.out.println(myStr3.contains("Hel"));   // true
-                System.out.println(myStr3.contains("e"));     // true
-                System.out.println(myStr3.contains("Hi"));    // false
+                System.out.println(((java.lang.String) myStr3).contains("Hel"));   // true
+                System.out.println(((java.lang.String) myStr3).contains("e"));     // true
+                System.out.println(((java.lang.String) myStr3).contains("Hi"));    // false
 
 // contentEquals(): Bir dizenin, belirtilen aynı karakter dizisini içerip içermediğini kontrol eder. boolean döndürür.
 
                 String myStr5 = "Hello";
-                System.out.println(myStr5.contentEquals("Hello"));  // true
-                System.out.println(myStr5.contentEquals("e"));      // false
-                System.out.println(myStr5.contentEquals("Hi"));     // false
+                System.out.println(((java.lang.String) myStr5).contentEquals("Hello"));  // true
+                System.out.println(((java.lang.String) myStr5).contentEquals("e"));      // false
+                System.out.println(((java.lang.String) myStr5).contentEquals("Hi"));     // false
 
 // endsWith(): Bir dizenin belirtilen karakter (ler) ile bitip bitmediğini kontrol eder. boolean döndürür.
                 String myStr6 = "Hello";
-                System.out.println(myStr6.endsWith("Hel"));   // false
-                System.out.println(myStr6.endsWith("llo"));   // true
-                System.out.println(myStr6.endsWith("o"));     // true
+                System.out.println(((java.lang.String) myStr6).endsWith("Hel"));   // false
+                System.out.println(((java.lang.String) myStr6).endsWith("llo"));   // true
+                System.out.println(((java.lang.String) myStr6).endsWith("o"));     // true
 
 // equals(): İki dizgiyi karşılaştırır. Dizeler eşitse doğru, değilse yanlış döndürür. boolean döndürür.
                 String myStr7 = "Hello";
@@ -60,8 +61,8 @@
                 String myStr10 = "Hello";
                 String myStr11 = "HELLO";
                 String myStr12 = "Another String";
-                System.out.println(myStr10.equalsIgnoreCase(myStr11)); // true
-                System.out.println(myStr10.equalsIgnoreCase(myStr12)); // false
+                System.out.println(((java.lang.String) myStr10).equalsIgnoreCase(myStr11)); // true
+                System.out.println(((java.lang.String) myStr10).equalsIgnoreCase(myStr12)); // false
 
 // hashCode(): Bir dizenin karma kodunu verir. int döndürür.
                 String myStr13 = "Hello";
@@ -69,7 +70,7 @@
 
 // indexOf(): Bir dizede belirtilen karakterlerin ilk bulunan oluşumunun konumunu verir. int döndürür.
                 String myStr14 = "Hello planet earth, you are a great planet.";
-                System.out.println(myStr14.indexOf("planet"));
+                System.out.println(((java.lang.String) myStr14).indexOf("planet"));
 
 
 // isEmpty(): Bir dizenin boş olup olmadığını kontrol eder. boolean döndürür.
@@ -153,10 +154,20 @@
 // replaceAll(): Verilen normal ifadeyle eşleşen bu dizenin her bir alt dizesini verilen değiştirmeyle değiştirir. String döndürür.
 
 // split(): Bir dizeyi bir alt dizeye böler. String[] döndürür.
+                String isim= "Ayse, Fatma, Hayriye";
+
+                String [] isimler= isim.split(",");
+
+                System.out.println("Arrays.toString(isimler) = " + Arrays.toString(isimler));//[Ayse,  Fatma,  Hayriye]
+
 
 // subSequence(): Bu dizinin bir alt dizisi olan yeni bir karakter dizisi verir. CharSequence döndürür.
 
 // substring(): Karakterleri bir dizeden, belirtilen bir başlangıç konumundan başlayarak ve belirtilen karakter sayısıyla ayıklar. String döndürür.
+
+                String sehirler="Ankara, Antalya, Mersin";
+                String x=sehirler.substring(0,6);
+                System.out.println("x = " + x);//x = Ankara
 
 // toCharArray(): Bu dizeyi yeni bir karakter dizisine dönüştürür. char[] döndürür.
 
