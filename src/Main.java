@@ -155,9 +155,7 @@ public class Main {
 
 // split(): Bir dizeyi bir alt dizeye böler. String[] döndürür.
                 String isim= "Ayse, Fatma, Hayriye";
-
                 String [] isimler= isim.split(",");
-
                 System.out.println("Arrays.toString(isimler) = " + Arrays.toString(isimler));//[Ayse,  Fatma,  Hayriye]
 
 
