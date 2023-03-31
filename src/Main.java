@@ -171,7 +171,19 @@ public class Main {
 
 // valueOf(): Bir String nesnesinin ilkel değerini verir. String döndürür.
 
+// regionMatches(): İki dizi bölgesinin eşit olup olmadığını test eder. boolean döndürür.
+                java.lang.String str1 = "Merhaba, Dünya!";
+                java.lang.String str2 = "merhaba, dünya!";
 
+                // Başlangıç pozisyonu, karşılaştırılacak dizeler ve
+                // Başlangıç dizininden itibaren kaç karakter karşılaştırılacağı
+                boolean result = str1.regionMatches(true, 0, str2, 0, 8);
+
+                if (result) {
+                    System.out.println("İki dize de aynı karakterleri içeriyor.");
+                } else {
+                    System.out.println("İki dize aynı karakterleri içermiyor.");
 
             }
+        }
         }
