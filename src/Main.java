@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class Main {
-            public static <String> void main(String[] args) {
+            public static void main(String[] args) {
                 System.out.println("Java String Sınıfı Metotları!");
 
 // charAt(): Belirtilen indisteki (konum) karakteri verir. char döndürür
@@ -147,6 +147,32 @@ public class Main {
 
 // offsetByCodePoints(): CodePointOffset kod noktaları tarafından verilen dizinden uzak olan bu Dize içindeki dizini döndürür. int döndürür.
 
+                // 1. Örnek
+                String strNew = "Merhaba dünya!";
+                int startIndex = 0; // Başlangıç indeksi
+                int codePointOffset = 3; // İleri gitmek istenen karakter sayısı
+                int newIndex = strNew.offsetByCodePoints(startIndex, codePointOffset);
+
+                System.out.println("Başlangıç indeksi: " + startIndex); // 0
+                System.out.println("İleri gitmek istenen karakter sayısı: " + codePointOffset); // 3
+                System.out.println("Yeni indeks: " + newIndex); // 3
+                char c = strNew.charAt(newIndex);
+                System.out.println("Yeni karakter: " + c); // h
+
+                // 2. Örnek
+
+                String strNew1 = "Hello, World";
+                int offset = strNew1.offsetByCodePoints(2, 3); // "llo, W" stringindeki 5. karakterin indexi (0'dan başlayarak)
+                System.out.println(offset); // 5
+                char c1 = strNew1.charAt(offset);
+                System.out.println("Yeni karakter: " + c1); // ,
+
+                // 3. Örnek
+                String strNew2 = "Java is awesome!";
+                int offset2 = strNew2.offsetByCodePoints(5, -1); // "is" kelimesinin ilk karakterinin indexi (0'dan başlayarak)
+                System.out.println(offset2); // 4
+
+
 // regionMatches(): İki dizi bölgesinin eşit olup olmadığını test eder. boolean döndürür.
 
 // replaceFirst(): Verilen normal ifadeyle eşleşen bir alt dizenin ilk oluşumunu verilen değiştirmeyle değiştirir. String döndürür.
@@ -168,6 +194,14 @@ public class Main {
                 System.out.println("x = " + x);//x = Ankara
 
 // toCharArray(): Bu iodize yeni bir karakter dizisine dönüştürür. char[] döndürür.
+
+                String str = "Merhaba dünya!";
+                char[] charArray = str.toCharArray();
+                System.out.println("Arrays.toString(charArray) = " + Arrays.toString(charArray)); // [M, e, r, h, a, b, a,  , d, ü, n, y, a, !]
+
+                for (char each : charArray) {
+                    System.out.print(each + " "); // M e r h a b a   d ü n y a !
+                }
 
 // valueOf(): Bir String nesnesinin ilkel değerini verir. String döndürür.
 
